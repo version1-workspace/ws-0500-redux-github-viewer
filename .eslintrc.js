@@ -21,12 +21,5 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'prettier/prettier': [
-      'error',
-      {
-        singleQuote: true,
-        semi: false,
-      },
-    ],
   },
 };
