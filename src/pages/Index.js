@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Profile from './Profile'
 import IndexTab from '../components/templates/Index'
 import IssueTab from '../components/templates/Issue'
 import PullRequestTab from '../components/templates/PullRequest'
@@ -32,24 +33,51 @@ const Content = styled.div`
   padding: 32px 16px;
 `
 
+const Tabs = [
+  {
+    path: '/issue',
+    component: <IssueTab />
+  },
+  {
+    path: '/pull-requests',
+    component: <PullRequestTab />
+  },
+  {
+    path: '/',
+    component: <IndexTab />
+  }
+]
+
 const Index = () => {
   const [selected, setSelected] = useState('top')
+  useEffect(() => {
+    if (!window.location) {
+      return
+    }
+    const tab = tabs.find((item) => item.to === window.location.pathname)
+    if (tab) {
+      setSelected(tab.key)
+    }
+  }, [setSelected])
   return (
     <Container>
       <Header />
       <Content>
         <Router>
-          <TabHeader selected={selected} onChange={setSelected} tabs={tabs} />
           <Switch>
-            <Route path="/issue">
-              <IssueTab />
+            <Route path="/profile">
+              <Profile />
             </Route>
-            <Route path="/pull-requests">
-              <PullRequestTab />
-            </Route>
-            <Route path="/">
-              <IndexTab />
-            </Route>
+            {Tabs.map((item) => (
+              <Route key={item.path} path={item.path}>
+                <TabHeader
+                  selected={selected}
+                  onChange={setSelected}
+                  tabs={tabs}
+                />
+                {item.component}
+              </Route>
+            ))}
           </Switch>
         </Router>
       </Content>

@@ -1,11 +1,14 @@
 import React from 'react'
 import { GlobalStyle } from './styles'
 import Pages from './pages/Index'
+import { BrowserRouter as Router } from 'react-router-dom'
 
 const App = () => (
   <>
-    <GlobalStyle />
-    <Pages />
+    <Router>
+      <GlobalStyle />
+      <Pages />
+    </Router>
   </>
 )
 

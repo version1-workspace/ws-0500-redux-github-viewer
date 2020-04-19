@@ -56,7 +56,7 @@ const TabHeader = ({ tabs, selected, onChange }) => {
 
 TabHeader.propTypes = {
   tabs: PropTypes.array,
-  selected: PropTypes.bool,
+  selected: PropTypes.string,
   onChange: PropTypes.func
 }
 
