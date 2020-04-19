@@ -25,7 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
-  ul {
+  ul, p {
     padding: 0;
     margin: 0;
   }
