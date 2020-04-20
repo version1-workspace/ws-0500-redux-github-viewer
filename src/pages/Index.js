@@ -7,6 +7,7 @@ import IssueTab from '../containers/IssueTab'
 import PullRequestTab from '../components/templates/PullRequest'
 import Header from '../components/organisms/Header'
 import TabHeader from '../components/organisms/TabHeader'
+import IssueNew from '../pages/issue/New'
 
 const tabs = [
   {
@@ -65,6 +66,9 @@ const Index = () => {
       <Content>
         <Router>
           <Switch>
+            <Route path="/issue/new">
+              <IssueNew />
+            </Route>
             <Route path="/profile">
               <Profile />
             </Route>
