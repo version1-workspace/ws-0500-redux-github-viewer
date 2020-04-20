@@ -5,6 +5,7 @@ import dayjs from 'dayjs'
 import { Link } from 'react-router-dom'
 import { colors } from '../../styles/variable'
 import Button from '../atoms/Button'
+import TextField from '../atoms/TextField'
 
 const borderStyle = `1px solid ${colors.border}`
 
@@ -23,21 +24,12 @@ const SearchForm = styled.div`
   padding: 8px 16px;
   display: flex;
   width: 100%;
+
+  .text-field-container {
+    width: 100%;
+  }
 `
 
-const TextFieldContainer = styled.div`
-  width: 60%;
-  border-radius: 6px;
-  border: ${borderStyle};
-`
-const TextField = styled.input`
-  padding: 8px;
-  border: none;
-  outline: none;
-  background: none;
-  font-size: 1rem;
-  width: 100%;
-`
 const Action = styled.div`
   display: flex;
 `
@@ -75,9 +67,7 @@ const Issue = ({ data }) => {
           <h2>Issue</h2>
         </Heading>
         <SearchForm>
-          <TextFieldContainer>
-            <TextField placeholder="issue名で検索" />
-          </TextFieldContainer>
+          <TextField placeholder="issue名で検索" />
         </SearchForm>
         <Action>
           <Link to="/issue/new">
