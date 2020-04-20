@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
+import { Link } from 'react-router-dom'
 import { colors } from '../../styles/variable'
 import Button from '../atoms/Button'
 
@@ -79,7 +80,9 @@ const Issue = ({ data }) => {
           </TextFieldContainer>
         </SearchForm>
         <Action>
-          <Button type="primary">New</Button>
+          <Link to="/issue/new">
+            <Button type="primary">New</Button>
+          </Link>
           <Button type="danger">Delete</Button>
         </Action>
       </Header>
