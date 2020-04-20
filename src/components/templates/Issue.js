@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { colors } from '../../styles/variable'
+import Button from '../atoms/Button'
 
 const borderStyle = `1px solid ${colors.border}`
 
@@ -34,35 +35,11 @@ const TextField = styled.input`
   font-size: 1rem;
   width: 100%;
 `
-const Button = styled.a`
-  cursor: pointer;
-  display: block;
-  width: 100%;
-  text-align: center;
-  padding: 4px 16px;
-  margin: 4px;
-  min-width: 100px;
-  border-radius: 6px;
-  background ${colors.primary};
-  border-bottom: 2px solid #28a745;
-  color: white;
-  font-size: 1rem;
-
-  &:hover {
-    background: #28a745;
-    border-bottom: 2px solid #208437;
-  }
-
-  &:active {
-    border-bottom: 0;
-  }
-`
-
 const Action = styled.div`
   display: flex;
 `
 
-const Table = styled.div`
+const Table = styled.table`
   border: ${borderStyle};
   border-radius: 6px;
   .outline {
@@ -74,8 +51,7 @@ const Table = styled.div`
     padding: 8px;
     text-align: left;
     min-width: 10rem;
-    border-bottom: ${borderStyle};
-  }
+    border-bottom: ${borderStyle}; }
 
   th:first-child,
   td:first-child {
@@ -100,8 +76,8 @@ const Issue = () => {
           </TextFieldContainer>
         </SearchForm>
         <Action>
-          <Button>New</Button>
-          <Button>Delete</Button>
+          <Button type="primary">New</Button>
+          <Button type="danger">Delete</Button>
         </Action>
       </Header>
       <Content>
@@ -126,8 +102,8 @@ const Issue = () => {
               <td className="outline">Text</td>
               <td>
                 <select>
-                  <option>Open</option>
-                  <option>Close</option>
+                  <option value="0">Open</option>
+                  <option value="1">Close</option>
                 </select>
               </td>
               <td>jjoo</td>
