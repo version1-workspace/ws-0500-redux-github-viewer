@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import dayjs from 'dayjs'
 import { colors } from '../../styles/variable'
 import Button from '../atoms/Button'
 
@@ -51,7 +53,8 @@ const Table = styled.table`
     padding: 8px;
     text-align: left;
     min-width: 10rem;
-    border-bottom: ${borderStyle}; }
+    border-bottom: ${borderStyle};
+  }
 
   th:first-child,
   td:first-child {
@@ -63,7 +66,7 @@ const Table = styled.table`
   }
 `
 
-const Issue = () => {
+const Issue = ({ data }) => {
   return (
     <Container>
       <Header>
@@ -95,25 +98,34 @@ const Issue = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>
-                <input type="checkbox" />
-              </td>
-              <td className="outline">Text</td>
-              <td>
-                <select>
-                  <option value="0">Open</option>
-                  <option value="1">Close</option>
-                </select>
-              </td>
-              <td>jjoo</td>
-              <td>04-18 00:00</td>
-              <td>04-18 00:00</td>
-            </tr>
+            {Object.values(data).map(
+              ({ id, title, status, assignee, createdAt, updatedAt }) => (
+                <tr key={id}>
+                  <td>
+                    <input type="checkbox" />
+                  </td>
+                  <td className="outline">{title}</td>
+                  <td>
+                    <select value={status}>
+                      <option value="0">Open</option>
+                      <option value="1">Close</option>
+                    </select>
+                  </td>
+                  <td>{assignee}</td>
+                  <td>{dayjs(createdAt).format('MM-DD-YYYY')}</td>
+                  <td>{dayjs(updatedAt).format('MM-DD-YYYY')}</td>
+                </tr>
+              )
+            )}
           </tbody>
         </Table>
       </Content>
     </Container>
   )
 }
+
+Issue.propTypes = {
+  data: PropTypes.array
+}
+
 export default Issue
