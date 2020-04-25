@@ -6,6 +6,7 @@ import Button from '../atoms/Button'
 import TextField from '../atoms/TextField'
 import IssueItem from '../organisms/IssueItem'
 import NewIssue from '../templates/NewIssue'
+import EditIssue from '../templates/EditIssue'
 
 const borderStyle = `1px solid ${colors.border}`
 
@@ -107,6 +108,21 @@ const Issue = ({
     })
   }, [user, showModal, removeModal, addIssue])
 
+  const onEdit = useCallback(
+    (issue) => {
+      showModal({
+        component: (
+          <EditIssue
+            issue={issue}
+            onSubmit={updateIssue}
+            onClose={removeModal}
+          />
+        )
+      })
+    },
+    [showModal, removeModal, updateIssue]
+  )
+
   const onRemove = useCallback(() => {
     Object.values(checked).forEach((issue) => {
       removeIssue({ issue })
@@ -143,10 +159,10 @@ const Issue = ({
                 />
               </th>
               <th></th>
-              <th>Status</th>
-              <th>Asignee</th>
-              <th>Created At</th>
-              <th>Updated At</th>
+              <th>ステータス</th>
+              <th>作成者</th>
+              <th>作成日付</th>
+              <th>更新日付</th>
             </tr>
           </thead>
           <tbody>
@@ -157,6 +173,7 @@ const Issue = ({
                     key={item.id}
                     issue={item}
                     checked={checked[item.id]}
+                    onClick={onEdit}
                     onCheck={onCheck}
                   />
                 )
