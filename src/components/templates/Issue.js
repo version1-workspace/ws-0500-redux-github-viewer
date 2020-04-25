@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, useMemo, useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { colors } from '../../styles/variable'
@@ -59,7 +59,38 @@ const Table = styled.table`
   }
 `
 
+const ids2Obj = (ids) => {
+  return ids.reduce((acc, id) => {
+    return { ...acc, [id]: true }
+  }, {})
+}
+
 const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
+  const list = useMemo(() => Object.values(data), [data])
+  const [checkedIds, setCheckedIds] = useState({})
+
+  const onCheckAll = useCallback(() => {
+    if (Object.keys(checkedIds).length === Object.keys(data).length) {
+      setCheckedIds({})
+      return
+    }
+    const ids = ids2Obj(Object.keys(data))
+    setCheckedIds(ids)
+  }, [checkedIds, data])
+
+  const onCheck = useCallback(
+    ({ id }) => {
+      const newIds = { ...checkedIds }
+      if (checkedIds[id]) {
+        delete newIds[id]
+      } else {
+        newIds[id] = true
+      }
+      setCheckedIds(newIds)
+    },
+    [checkedIds]
+  )
+
   const onNew = useCallback(() => {
     const onAdd = (payload) => {
       addIssue(payload)
@@ -70,7 +101,6 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
     })
   }, [user, showModal, removeModal, addIssue])
 
-  const list = Object.values(data)
   return (
     <Container>
       <Header>
@@ -92,7 +122,7 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
           <thead>
             <tr>
               <th>
-                <input type="checkbox" />
+                <input type="checkbox" onClick={onCheckAll} />
               </th>
               <th></th>
               <th>Status</th>
@@ -103,7 +133,16 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
           </thead>
           <tbody>
             {list.length ? (
-              list.map((item) => <IssueItem key={item.id} issue={item} />)
+              list.map((item) => {
+                return (
+                  <IssueItem
+                    key={item.id}
+                    issue={item}
+                    checked={checkedIds[item.id]}
+                    onCheck={onCheck}
+                  />
+                )
+              })
             ) : (
               <></>
             )}

@@ -9,10 +9,11 @@ const reducer = (state = initialState, action) => {
   const { index, data } = state
   const { issue } = action.payload || {}
   const newData = { ...state.data }
+  const id = index + 1
   switch (action.type) {
     case ISSUE_ADD:
-      newData[index + 1] = issue
-      return { ...state, index: index + 1, data: newData }
+      newData[id] = { ...issue, id }
+      return { ...state, index: id, data: newData }
     case ISSUE_UPDATE:
       return {
         ...state,
