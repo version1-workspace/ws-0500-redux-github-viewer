@@ -1,6 +1,7 @@
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import IssueTab from '../components/templates/Issue'
-import { ISSUE_ADD, ISSUE_REMOVE, ISSUE_UPDATE } from '../actions'
+import { actionCreators } from '../actions'
 
 const mapStateToProps = ({ issue }) => {
   return {
@@ -9,11 +10,7 @@ const mapStateToProps = ({ issue }) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    add: () => dispatch({ type: ISSUE_ADD }),
-    update: () => dispatch({ type: ISSUE_REMOVE }),
-    remove: () => dispatch({ type: ISSUE_UPDATE })
-  }
+  return bindActionCreators(actionCreators, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(IssueTab)

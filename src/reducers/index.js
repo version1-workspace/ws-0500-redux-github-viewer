@@ -4,6 +4,11 @@ import issue from './issue'
 import pullRequest from './pullRequest'
 import modal from './ui/modal'
 
-const reducer = combineReducers({ user, issue, pullRequest, ui: { modal } })
+const reducer = combineReducers({
+  user,
+  issue,
+  pullRequest,
+  ui: combineReducers({ modal })
+})
 
 export default reducer

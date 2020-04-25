@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useCallback, useMemo } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import dayjs from 'dayjs'
-import { Link } from 'react-router-dom'
 import { colors } from '../../styles/variable'
 import Button from '../atoms/Button'
 import TextField from '../atoms/TextField'
+import NewIssue from '../templates/NewIssue'
 
 const borderStyle = `1px solid ${colors.border}`
 
@@ -59,7 +59,18 @@ const Table = styled.table`
   }
 `
 
-const Issue = ({ data }) => {
+const Issue = ({ data, showModal, addIssue, removeModal }) => {
+  const onNew = useCallback(() => {
+    const onAdd = (payload) => {
+      addIssue(payload)
+      removeModal()
+    }
+    showModal({
+      component: <NewIssue onSubmit={onAdd} onClose={removeModal} />
+    })
+  }, [showModal, removeModal, addIssue])
+
+  const list = useMemo(() => Object.values(data), [data])
   return (
     <Container>
       <Header>
@@ -70,9 +81,9 @@ const Issue = ({ data }) => {
           <TextField placeholder="issue名で検索" />
         </SearchForm>
         <Action>
-          <Link to="/issue/new">
-            <Button type="primary">New</Button>
-          </Link>
+          <Button type="primary" onClick={onNew}>
+            New
+          </Button>
           <Button type="danger">Delete</Button>
         </Action>
       </Header>
@@ -91,7 +102,7 @@ const Issue = ({ data }) => {
             </tr>
           </thead>
           <tbody>
-            {Object.values(data).map(
+            {list.map(
               ({ id, title, status, assignee, createdAt, updatedAt }) => (
                 <tr key={id}>
                   <td>
@@ -118,7 +129,12 @@ const Issue = ({ data }) => {
 }
 
 Issue.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.object,
+  showModal: PropTypes.func,
+  removeModal: PropTypes.func,
+  addIssue: PropTypes.func,
+  removeIssue: PropTypes.func,
+  updateIssue: PropTypes.func
 }
 
 export default Issue
