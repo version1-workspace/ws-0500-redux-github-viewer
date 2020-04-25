@@ -6,6 +6,7 @@ import Profile from './pages/Profile'
 import Index from './pages/Index'
 import Header from './components/organisms/Header'
 import IssueNew from './pages/issue/New'
+import Modal from './containers/Modal'
 
 const Container = styled.div``
 const Content = styled.div`
@@ -33,6 +34,7 @@ const App = () => {
             </Route>
           </Switch>
         </Content>
+        <Modal />
       </Container>
     </Router>
   )
