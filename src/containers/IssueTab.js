@@ -3,9 +3,10 @@ import { connect } from 'react-redux'
 import IssueTab from '../components/templates/Issue'
 import { actionCreators } from '../actions'
 
-const mapStateToProps = ({ issue }) => {
+const mapStateToProps = ({ user, issue }) => {
   return {
-    data: issue.data
+    data: issue.data,
+    user
   }
 }
 
