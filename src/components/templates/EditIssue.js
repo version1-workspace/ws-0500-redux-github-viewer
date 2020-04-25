@@ -54,10 +54,18 @@ const Footer = styled.div`
   padding: 8px;
 `
 
-const NewIssue = ({ user, onSubmit, onClose }) => {
+const EditIssue = ({ issue, onSubmit, onClose }) => {
   const [validationError, setValidationError] = useState('')
-  const [title, setTitle] = useState('')
-  const [description, setDescription] = useState('')
+  const [title, setTitle] = useState(issue.title)
+  const [status, setStatus] = useState(issue.status)
+  const [description, setDescription] = useState(issue.description)
+
+  const onChangeStatus = useCallback(
+    (e) => {
+      setStatus(e.target.value)
+    },
+    [setStatus]
+  )
 
   const _onSubmit = useCallback(() => {
     if (!title) {
@@ -73,15 +81,15 @@ const NewIssue = ({ user, onSubmit, onClose }) => {
     const now = new Date()
     onSubmit({
       issue: {
+        ...issue,
         title,
         description,
-        createBy: user.name,
-        status: 0,
-        createdAt: now,
+        status,
         updatedAt: now
       }
     })
-  }, [user, title, description, onSubmit, setValidationError])
+    onClose()
+  }, [issue, title, status, description, onSubmit, onClose, setValidationError])
 
   return (
     <Container>
@@ -103,6 +111,13 @@ const NewIssue = ({ user, onSubmit, onClose }) => {
             onChangeText={setDescription}
           />
         </Field>
+        <Field>
+          <Label>ステータス</Label>
+          <select value={status} onChange={onChangeStatus}>
+            <option value="0">Open</option>
+            <option value="1">Close</option>
+          </select>
+        </Field>
       </Form>
       <MessageContainer>
         {validationError && <ErrorMessage>{validationError}</ErrorMessage>}
@@ -117,10 +132,10 @@ const NewIssue = ({ user, onSubmit, onClose }) => {
   )
 }
 
-NewIssue.propTypes = {
-  user: PropTypes.object,
+EditIssue.propTypes = {
+  issue: PropTypes.object,
   onSubmit: PropTypes.func,
   onClose: PropTypes.func
 }
 
-export default NewIssue
+export default EditIssue
