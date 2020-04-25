@@ -2,7 +2,8 @@ import { combineReducers } from 'redux'
 import user from './user'
 import issue from './issue'
 import pullRequest from './pullRequest'
+import modal from './ui/modal'
 
-const reducer = combineReducers({ user, issue, pullRequest })
+const reducer = combineReducers({ user, issue, pullRequest, ui: { modal } })
 
 export default reducer
