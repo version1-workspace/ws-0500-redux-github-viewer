@@ -59,36 +59,42 @@ const Table = styled.table`
   }
 `
 
-const ids2Obj = (ids) => {
-  return ids.reduce((acc, id) => {
-    return { ...acc, [id]: true }
-  }, {})
-}
-
-const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
+const Issue = ({
+  data,
+  user,
+  showModal,
+  addIssue,
+  removeIssue,
+  updateIssue,
+  removeModal
+}) => {
   const list = useMemo(() => Object.values(data), [data])
-  const [checkedIds, setCheckedIds] = useState({})
-
+  const [checked, setChecked] = useState({})
+  const allChecked = useMemo(
+    () =>
+      Object.keys(data).length &&
+      Object.keys(checked).length === Object.keys(data).length,
+    [data, checked]
+  )
   const onCheckAll = useCallback(() => {
-    if (Object.keys(checkedIds).length === Object.keys(data).length) {
-      setCheckedIds({})
+    if (allChecked) {
+      setChecked({})
       return
     }
-    const ids = ids2Obj(Object.keys(data))
-    setCheckedIds(ids)
-  }, [checkedIds, data])
+    setChecked(data)
+  }, [allChecked, data])
 
   const onCheck = useCallback(
     ({ id }) => {
-      const newIds = { ...checkedIds }
-      if (checkedIds[id]) {
+      const newIds = { ...checked }
+      if (checked[id]) {
         delete newIds[id]
       } else {
-        newIds[id] = true
+        newIds[id] = data[id]
       }
-      setCheckedIds(newIds)
+      setChecked(newIds)
     },
-    [checkedIds]
+    [data, checked]
   )
 
   const onNew = useCallback(() => {
@@ -100,6 +106,12 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
       component: <NewIssue user={user} onSubmit={onAdd} onClose={removeModal} />
     })
   }, [user, showModal, removeModal, addIssue])
+
+  const onRemove = useCallback(() => {
+    Object.values(checked).forEach((issue) => {
+      removeIssue({ issue })
+    })
+  }, [checked, removeIssue])
 
   return (
     <Container>
@@ -114,7 +126,9 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
           <Button type="primary" onClick={onNew}>
             New
           </Button>
-          <Button type="danger">Delete</Button>
+          <Button type="danger" onClick={onRemove}>
+            Delete
+          </Button>
         </Action>
       </Header>
       <Content>
@@ -122,7 +136,11 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
           <thead>
             <tr>
               <th>
-                <input type="checkbox" onClick={onCheckAll} />
+                <input
+                  type="checkbox"
+                  defaultChecked={allChecked}
+                  onClick={onCheckAll}
+                />
               </th>
               <th></th>
               <th>Status</th>
@@ -138,7 +156,7 @@ const Issue = ({ data, user, showModal, addIssue, removeModal }) => {
                   <IssueItem
                     key={item.id}
                     issue={item}
-                    checked={checkedIds[item.id]}
+                    checked={checked[item.id]}
                     onCheck={onCheck}
                   />
                 )
