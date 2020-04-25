@@ -124,7 +124,7 @@ const EditIssue = ({ issue, onSubmit, onClose }) => {
       </MessageContainer>
       <Footer>
         <Button type="primary" onClick={_onSubmit}>
-          作成
+          更新
         </Button>
         <LabelButton onClick={onClose}>閉じる</LabelButton>
       </Footer>
