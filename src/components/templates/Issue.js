@@ -69,7 +69,14 @@ const Issue = ({
   updateIssue,
   removeModal
 }) => {
-  const list = useMemo(() => Object.values(data), [data])
+  const [searchWord, setSearchWord] = useState('')
+  const list = useMemo(() => {
+    const values = Object.values(data)
+    if (!searchWord) {
+      return values
+    }
+    return values.filter((value) => value.title.includes(searchWord))
+  }, [data, searchWord])
   const [checked, setChecked] = useState({})
   const allChecked = useMemo(
     () =>
@@ -136,7 +143,11 @@ const Issue = ({
           <h2>Issue</h2>
         </Heading>
         <SearchForm>
-          <TextField placeholder="issue名で検索" />
+          <TextField
+            value={searchWord}
+            placeholder="issue名で検索"
+            onChangeText={setSearchWord}
+          />
         </SearchForm>
         <Action>
           <Button type="primary" onClick={onNew}>
