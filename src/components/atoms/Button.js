@@ -49,13 +49,14 @@ const map = {
   danger: ButtonDanger
 }
 
-const ButtonComponent = ({ type, children }) => {
+const ButtonComponent = ({ type, onClick, children }) => {
   const component = map[type] || map.default
-  return React.createElement(component, {}, children)
+  return React.createElement(component, { onClick }, children)
 }
 
 ButtonComponent.propTypes = {
   type: PropTypes.string,
+  onClick: PropTypes.func,
   children: PropTypes.elementType
 }
 
