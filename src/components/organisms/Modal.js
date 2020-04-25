@@ -9,6 +9,8 @@ const customStyles = {
   }
 }
 
+Modal.setAppElement('#root')
+
 const ModalContainer = ({ show, component }) => {
   if (!show) {
     return <></>
@@ -22,7 +24,7 @@ const ModalContainer = ({ show, component }) => {
 
 ModalContainer.propTypes = {
   show: PropTypes.bool,
-  component: PropTypes.func
+  component: PropTypes.object
 }
 
 export default ModalContainer

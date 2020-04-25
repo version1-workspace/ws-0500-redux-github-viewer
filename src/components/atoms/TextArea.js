@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { colors } from '../../styles/variable'
@@ -19,17 +19,31 @@ const TextArea = styled.textarea`
   width: 100%;
 `
 
-const TextAreaComponent = ({ value, placeholder }) => {
+const TextAreaComponent = ({ value, placeholder, onChange, onChangeText }) => {
+  const _onChange = useCallback(
+    (e) => {
+      if (onChange) {
+        onChange(e)
+      }
+
+      if (onChangeText) {
+        onChangeText(e.target.value)
+      }
+    },
+    [onChange, onChangeText]
+  )
   return (
     <Container>
-      <TextArea value={value} placeholder={placeholder} />
+      <TextArea value={value} placeholder={placeholder} onChange={_onChange} />
     </Container>
   )
 }
 
 TextAreaComponent.propTypes = {
   value: PropTypes.string,
-  placeholder: PropTypes.string
+  placeholder: PropTypes.string,
+  onChange: PropTypes.func,
+  onChangeText: PropTypes.func
 }
 
 export default TextAreaComponent

@@ -1,34 +1,32 @@
+import { ISSUE_ADD, ISSUE_REMOVE, ISSUE_UPDATE } from '../actions'
+
 const initialState = {
-  data: {
-    1: {
-      id: 1,
-      title: 'Issue 1',
-      status: 0,
-      assignee: 'jjoo',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    2: {
-      id: 2,
-      title: 'Issue 2',
-      status: 1,
-      assignee: 'jjoo',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    3: {
-      id: 3,
-      title: 'Issue 3',
-      status: 0,
-      assignee: 'jjoo',
-      createdAt: new Date(),
-      updatedAt: new Date()
-    }
-  }
+  index: 0,
+  data: {}
 }
 
 const reducer = (state = initialState, action) => {
-  return state
+  const { index, data } = state
+  const { issue } = action.payload || {}
+  const newData = { ...state.data }
+  switch (action.type) {
+    case ISSUE_ADD:
+      newData[index + 1] = issue
+      return { ...state, index: index + 1, data: newData }
+    case ISSUE_UPDATE:
+      return {
+        ...state,
+        data: { ...data, [issue.id]: issue }
+      }
+    case ISSUE_REMOVE:
+      delete newData[issue.id]
+      return {
+        ...state,
+        data: newData
+      }
+    default:
+      return state
+  }
 }
 
 export default reducer
