@@ -35,7 +35,7 @@ const Index = () => {
             <Link to="/issue">Issue</Link>
           </li>
           <li>
-            <Link to="/pull-request">Pull Request</Link>
+            <Link to="/pull-requests">Pull Request</Link>
           </li>
         </ul>
       </Content>
