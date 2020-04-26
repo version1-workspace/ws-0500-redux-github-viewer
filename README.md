@@ -16,9 +16,10 @@ demo: https://version-1.github.io/redux-github-viewer/
   - [ ] styled-componentsのインストール
   - [ ] Eslint+Prettierのインストール
   - [ ] react-modalのインストール
-- [ ]ヘッダーの実装
-  - [ ]ヘッダーリンクの実装
-  - [ ]メニューの実装
+- [ ] ヘッダーの実装
+  - [ ] ヘッダーロゴの実装
+  - [ ] ヘッダーリンクの実装
+  - [ ] メニューの実装
 - [ ] issueページの実装
   - [ ] 一覧表示
   - [ ] issue作成
