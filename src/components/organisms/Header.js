@@ -58,7 +58,7 @@ const Header = () => {
   return (
     <Container>
       <Logo>
-        <Link href="/">
+        <Link to="/">
           <Title>Github Viewer</Title>
         </Link>
       </Logo>
