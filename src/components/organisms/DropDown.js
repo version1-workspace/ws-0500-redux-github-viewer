@@ -42,7 +42,7 @@ const DropDown = ({ menu }) => {
   const [show, setShow] = useState(false)
 
   const onHide = useCallback(() => {
-    setShow(false)
+    setTimeout(() => setShow(false))
     const root = document.querySelector('#root')
     root.removeEventListener('click', onHide)
   }, [])
