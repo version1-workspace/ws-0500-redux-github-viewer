@@ -50,7 +50,7 @@ yarn create react-app redux-github-viewer
 - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 - [ささっと学ぶReact Router v4](https://the2g.com/2789)
 
-##### 3.デモをみながらGithubViewerを実装
+#### 4.デモをみながらGithubViewerを実装
 
 ### チェックリスト
 
@@ -67,19 +67,11 @@ yarn create react-app redux-github-viewer
   - [ ] メニューの実装（ライブラリを使わずに実装)
 - [ ] issueページの実装
   - [ ] 一覧表示
-  - [ ] issue作成
-  - [ ] issue更新
+  - [ ] issue作成(react-modalを使って実装)
+  - [ ] issue更新(react-modalを使って実装)
   - [ ] issue削除
 - [ ] プロフィールページの実装（userストアにデータベタ書きしたものを表示だけ）
 - [ ] レスポンシブ対応
-
-
-###### modalの実装にはreact-modalを利用する
-
-###### styled-component をインストールしてstyled-componentを使ってスタイルする
-
-下記手順を参考にstyled-componentをインストールして使用する。
-[styled-components install](https://styled-components.com/docs/basics#installation)
 
 ##### 4. サイトとして公開
 
@@ -96,7 +88,11 @@ $ yarn add -D gh-pages
 "deploy": "gh-pages -d build"
 ```
 
-3. コマンドを実行
+3. packcage.jsonにhomepageの属性を追加
+```
+  "homepage": "https://[アカウントID].github.io/[リポジトリ名]" // Github Pagesで公開するURL
+```
+4. コマンドを実行
 
 ```
 $ yarn run deploy
