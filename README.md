@@ -23,41 +23,25 @@ demo: https://version-1.github.io/redux-github-viewer/
 
 1. reactをインストール
 ```
-yarn create react-app .
+yarn create react-app redux-github-viewer
 ```
 
-2. reactを動かしてみる
-```
-yarn start
-```
-
-ブラウザが起動してReactのロゴが表示されれば完了です。
-
-
-#### 2. Reactの公式ドキュメントを読む
+#### 2. Reduxの概念を学ぶ
 
 主にメインコンセプト部分中心に
 
-- [React.js公式](https://ja.reactjs.org/docs/hello-world.html)
-- [12 React Best Practices You Need to Follow in 2020](https://www.codeinwp.com/blog/react-best-practices/)
+- [React.js公式](https://redux.js.org/introduction/getting-started)
 
-jsFiddleのようなブラウザで動作を確認できるものを使いながら読むと理解が深まるかと思います。
+##### 3.デモをみながらGithubViewerを実装
 
-[jsFiddle](https://jsfiddle.net/boilerplate/react-jsx)
-
-
-##### 3. ○×ゲームを実装
-
-[js課題](https://github.com/version-1/js-tic-tac-toe)で実装した○×ゲームと同様のものを実装して、
-JavaScriptでの実装とReactでの実装の違いを学ぶ。
-
+###### modalの実装にはreact-modalを利用する
 
 ###### styled-component をインストールしてstyled-componentを使ってスタイルする
 
 下記手順を参考にstyled-componentをインストールして使用する。
 [styled-components install](https://styled-components.com/docs/basics#installation)
 
-##### 5. サイトとして公開
+##### 4. サイトとして公開
 
 1. gh-pagesモジュールを追加
 
