@@ -3,13 +3,14 @@ import styled from 'styled-components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { GlobalStyle } from './styles'
 import Index from './pages/Index'
-import Profile from './pages/Profile'
+import Profile from './containers/Profile'
 import Issue from './pages/Issue'
 import PullRequest from './pages/PullRequest'
 import Header from './components/organisms/Header'
 import Modal from './containers/Modal'
 
 const Container = styled.div``
+
 const Content = styled.div`
   max-width: 896px;
   margin: 0 auto;
