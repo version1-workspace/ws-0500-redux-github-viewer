@@ -31,6 +31,22 @@ demo: https://version-1.github.io/redux-github-viewer/
 yarn create react-app redux-github-viewer
 ```
 
+#### 2. Eslint Prettierのセットアップ
+
+##### 1. 静的解析ツールのeslintとpretteirをセットアップする
+
+[ESLintとPrettierを導入する] (https://qiita.com/kobayashi-m42/items/ea2588686a477d083926)
+
+※ yarnに読み替えてセットアップしてください
+
+##### 2. 使用しているエディタにeslint, prettierのプラグインを導入
+
+```
+[使用しているエディタ] eslint or prettier プラグイン
+```
+
+で検索してインストールしてみてください。詰まった場合は適宜質問ください。
+
 #### 2. Reduxの概念を学ぶ
 
 主にメインコンセプト部分中心に
@@ -42,7 +58,7 @@ yarn create react-app redux-github-viewer
 
 [Redux Todo List](https://jsfiddle.net/version1/u4y0j1qv/latest)
 
-#### 3. SAP(Single Page Application)の概念を学ぶ
+#### 3. SPA(Single Page Application)の概念を学ぶ
 
 - [SPA(Single Page Application)ってなに？](https://digitalidentity.co.jp/blog/creative/about-single-page-application.html)
 - [シングルページアプリケーション（SPA）の導入メリット＆デメリット](https://www.oro.com/ja/technology/001/)
