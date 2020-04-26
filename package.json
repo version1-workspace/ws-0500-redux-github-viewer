@@ -5,7 +5,9 @@
   "author": "version-1 <j.onodera26@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -29,6 +31,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
+    "gh-pages": "^2.2.0",
     "prettier": "^2.0.4",
     "redux-devtools-extension": "^2.13.8"
   },
