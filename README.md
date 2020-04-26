@@ -3,9 +3,10 @@
 # Redux Github Viewer
 
 React+ReduxでGithub Viewerを実装しましょう。
+実際にGithub REST APIを叩くのは次課題なので、
+この課題は**React Router**と**Redux**の利用にフォーカスしましょう。
 
 demo: https://version-1.github.io/redux-github-viewer/
-
 
 ### チェックリスト
 
@@ -25,7 +26,6 @@ demo: https://version-1.github.io/redux-github-viewer/
   - [ ] issue作成
   - [ ] issue更新
   - [ ] issue削除
-
 
 
 ## 課題で身に着けること
@@ -54,7 +54,19 @@ yarn create react-app redux-github-viewer
 
 主にメインコンセプト部分中心に
 
-- [React.js公式](https://redux.js.org/introduction/getting-started)
+- [Redux.js公式](https://redux.js.org/introduction/getting-started)
+- [Redux入門【ダイジェスト版】10分で理解するReduxの基礎](https://qiita.com/kitagawamac/items/49a1f03445b19cf407b7)
+
+##### サンプル
+
+[redux todo list] (https://jsfiddle.net/version1/u4y0j1qv/)
+
+#### 3. SAP(Single Page Application)の概念を学ぶ
+
+- [SPA(Single Page Application)ってなに？](https://digitalidentity.co.jp/blog/creative/about-single-page-application.html)
+- [シングルページアプリケーション（SPA）の導入メリット＆デメリット](https://www.oro.com/ja/technology/001/)
+- [SPA(Single Page Application)の基本] (https://qiita.com/takanorip/items/82f0c70ebc81e9246c7a)
+- [React Router](https://redux.js.org/introduction/getting-started)
 
 ##### 3.デモをみながらGithubViewerを実装
 
