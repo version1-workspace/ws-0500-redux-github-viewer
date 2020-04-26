@@ -15,7 +15,9 @@ const Container = styled.div`
   margin-top: 16px;
 `
 
-const Content = styled.div``
+const Content = styled.div`
+  overflow: scroll;
+`
 const Header = styled.div`
   display: flex;
   align-items: center;

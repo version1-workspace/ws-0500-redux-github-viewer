@@ -1,6 +1,20 @@
 import { createGlobalStyle } from 'styled-components'
 import { colors } from './variable'
 
+const size = {
+  mobile: '576px',
+  tablet: '768px',
+  laptop: '1200px',
+  desktop: '2560px'
+}
+
+export const device = {
+  mobile: `(max-width: ${size.mobile})`,
+  tablet: `(max-width: ${size.tablet})`,
+  laptop: `(max-width: ${size.laptop})`,
+  desktop: `(max-width: ${size.desktop})`
+}
+
 export const GlobalStyle = createGlobalStyle`
   html {
     font-family: 'Lato', 'Lucida Grande', 'Lucida Sans Unicode', Tahoma, Sans-Serif;
@@ -37,5 +51,16 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: ${colors.link};
     text-decoration: none;
+  }
+
+  .ReactModal__Content {
+    margin: auto;
+    width: 60%;
+
+    @media ${device.mobile} {
+      width: 100%;
+      right: 0 !important;
+      left: 0 !important;
+    }
   }
 `
