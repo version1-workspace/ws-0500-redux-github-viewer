@@ -40,7 +40,7 @@ yarn create react-app redux-github-viewer
 
 ##### サンプル
 
-[Redux Todo List](https://jsfiddle.net/version1/u4y0j1qv/)
+[Redux Todo List](https://jsfiddle.net/version1/u4y0j1qv/latest)
 
 #### 3. SAP(Single Page Application)の概念を学ぶ
 
