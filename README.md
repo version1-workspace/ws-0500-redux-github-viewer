@@ -68,6 +68,10 @@ yarn create react-app redux-github-viewer
 
 #### 4.デモをみながらGithubViewerを実装
 
+- Pull Reqeustページは仮置きしているのででものようにタイトルだけ書いたページを置いておいてください。
+
+- 一箇所で長時間はまってしまった場合は別の機能を実装するか質問するようお願いします。
+
 ### チェックリスト
 
 - [ ] reactのリポジトリの作成
@@ -82,6 +86,8 @@ yarn create react-app redux-github-viewer
   - [ ] ヘッダーロゴの実装
   - [ ] ヘッダーリンクの実装
   - [ ] メニューの実装（ライブラリを使わずに実装)
+- [ ] topページの実装
+  - [ ] タブの実装(react-router等ライブラリは使わずに実装）
 - [ ] issueページの実装
   - [ ] 一覧表示
   - [ ] issueフィルタ機能の実装
