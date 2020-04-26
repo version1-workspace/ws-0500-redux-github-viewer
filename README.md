@@ -2,9 +2,30 @@
 
 # Redux Github Viewer
 
-JavaScriptで実装した○×ゲームと同様のゲームをReactで実装してください。
+React+ReduxでGithub Viewerを実装しましょう。
 
 demo: https://version-1.github.io/redux-github-viewer/
+
+
+### チェックリスト
+
+- [ ] reactのリポジトリの作成
+- [ ] yarnでのパッケージインストール
+  - [ ] redux, react-reduxtのインストール
+  - [ ] react-routerのインストール
+  - [ ] styled-componentsのインストール
+  - [ ] Eslint+Prettierのインストール
+  - [ ] react-modalのインストール
+- [ ]ヘッダーの実装
+  - [ ]ヘッダーリンクの実装
+  - [ ]メニューの実装
+- [ ] issueページの実装
+  - [ ] 一覧表示
+  - [ ] issue作成
+  - [ ] issue更新
+  - [ ] issue削除
+
+
 
 ## 課題で身に着けること
 
