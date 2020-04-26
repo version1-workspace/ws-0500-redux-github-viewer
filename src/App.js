@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import { GlobalStyle } from './styles'
-import Profile from './pages/Profile'
 import Index from './pages/Index'
+import Profile from './pages/Profile'
+import Issue from './pages/Issue'
+import PullRequest from './pages/PullRequest'
 import Header from './components/organisms/Header'
 import Modal from './containers/Modal'
 
@@ -24,6 +26,12 @@ const App = () => {
           <Switch>
             <Route path="/profile">
               <Profile />
+            </Route>
+            <Route path="/issue">
+              <Issue />
+            </Route>
+            <Route path="/pull-request">
+              <PullRequest />
             </Route>
             <Route exact path="/">
               <Index />
