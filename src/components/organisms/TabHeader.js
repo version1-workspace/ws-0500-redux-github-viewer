@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
 import { colors } from '../../styles/variable'
 
 const Container = styled.div``
@@ -13,7 +12,8 @@ const Tabs = styled.ul`
     padding: 0;
   }
 
-  a {
+  span {
+    cursor: pointer;
     color: ${colors.weakBlack};
     padding: 16px;
     display: block;
@@ -43,9 +43,7 @@ const TabHeader = ({ tabs, selected, onChange }) => {
           const onClick = () => onChange(key)
           return (
             <Tab active={active} key={key}>
-              <Link onClick={onClick} to={to}>
-                {label}
-              </Link>
+              <span onClick={onClick}>{label}</span>
             </Tab>
           )
         })}
