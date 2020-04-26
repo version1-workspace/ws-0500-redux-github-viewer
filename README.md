@@ -35,7 +35,7 @@ yarn create react-app redux-github-viewer
 
 ##### 1. 静的解析ツールのeslintとpretteirをセットアップする
 
-[ESLintとPrettierを導入する] (https://qiita.com/kobayashi-m42/items/ea2588686a477d083926)
+[ESLintとPrettierを導入する](https://qiita.com/kobayashi-m42/items/ea2588686a477d083926)
 
 ※ yarnに読み替えてセットアップしてください
 
