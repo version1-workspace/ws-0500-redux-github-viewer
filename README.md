@@ -56,7 +56,8 @@ yarn create react-app redux-github-viewer
 
 - [ ] reactのリポジトリの作成
 - [ ] yarnでのパッケージインストール
-  - [ ] redux, react-reduxtのインストール
+  - [ ] redux, react-reduxのインストール
+  - [ ] redux-devtoolのインストール
   - [ ] react-routerのインストール
   - [ ] styled-componentsのインストール
   - [ ] Eslint+Prettierのインストール
