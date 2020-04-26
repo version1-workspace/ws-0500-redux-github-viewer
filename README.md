@@ -60,7 +60,7 @@ yarn create react-app redux-github-viewer
   - [ ] redux-devtoolのインストール
   - [ ] react-routerのインストール
   - [ ] styled-componentsのインストール
-  - [ ] Eslint+Prettierのインストール
+  - [ ] eslint+prettierのインストール
   - [ ] react-modalのインストール
 - [ ] ヘッダーの実装
   - [ ] ヘッダーロゴの実装
@@ -68,9 +68,10 @@ yarn create react-app redux-github-viewer
   - [ ] メニューの実装（ライブラリを使わずに実装)
 - [ ] issueページの実装
   - [ ] 一覧表示
+  - [ ] issueフィルタ機能の実装
   - [ ] issue作成(react-modalを使って実装)
   - [ ] issue更新(react-modalを使って実装)
-  - [ ] issue削除
+  - [ ] issue削除(全て選択のチェックボックスも実装）
 - [ ] プロフィールページの実装（userストアにデータベタ書きしたものを表示だけ）
 - [ ] レスポンシブ対応
 
