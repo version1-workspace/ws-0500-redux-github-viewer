@@ -2,7 +2,7 @@
 
 # Redux Github Viewer
 
-React+ReduxでGithub Viewerを実装しましょう。
+React+ReduxでGithub Viewerを実装しましょう。</br>
 実際にGithub REST APIを叩くのは次課題なので、
 この課題は**React Router**と**Redux**の利用にフォーカスしましょう。
 
