@@ -9,9 +9,11 @@ demo: https://version-1.github.io/redux-github-viewer/
 ## 課題で身に着けること
 
 - Reduxでの状態管理
+- React Routerでのページ設定とページ遷移
+- Eslint + Prettier
 - モーダルの実装
+- メニューの実装
 - Hooks API
-- SPAのためのルーティング(React Router)
 
 ## 課題の進め方
 
