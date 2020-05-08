@@ -21,18 +21,18 @@ demo: https://version-1.github.io/redux-github-viewer/
 
 ## 課題の進め方
 
-#### 0. 課題用リポジトリの作成
+### 0. 課題用リポジトリの作成
 
 フォークでなく個人のアカウントにリポジトリ を作成してください。
 
-#### 1. yarn, create-react-appを利用してReactをインストール
+### 1. yarn, create-react-appを利用してReactをインストール
 
 1. reactをインストール
 ```
 yarn create react-app redux-github-viewer
 ```
 
-#### 2. Eslint Prettierのセットアップ
+### 2. Eslint Prettierのセットアップ
 
 ##### 1. 静的解析ツールのeslintとpretteirをセットアップする
 
@@ -48,7 +48,7 @@ yarn create react-app redux-github-viewer
 
 で検索してインストールしてみてください。詰まった場合は適宜質問ください。
 
-#### 2. 実装に必要な概念を学ぶ
+### 3. 実装に必要な概念を学ぶ
 
 ##### Atomic Designによるコンポーネント設計
 
@@ -84,13 +84,13 @@ src/components/ -+
 - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
 - [ささっと学ぶReact Router v4](https://the2g.com/2789)
 
-#### 4.デモをみながらGithubViewerを実装
+### 4.デモをみながらGithubViewerを実装
 
 - Pull Reqeustページは仮置きしているのででものようにタイトルだけ書いたページを置いておいてください。
 
 - 一箇所で長時間はまってしまった場合は別の機能を実装するか質問するようお願いします。
 
-### チェックリスト
+##### チェックリスト
 
 - [ ] reactのリポジトリの作成
 - [ ] yarnでのパッケージインストール
@@ -115,7 +115,7 @@ src/components/ -+
 - [ ] プロフィールページの実装（userストアにデータベタ書きしたものを表示だけ）
 - [ ] レスポンシブ対応
 
-##### 4. サイトとして公開
+### 5. サイトとして公開
 
 1. gh-pagesモジュールを追加
 
