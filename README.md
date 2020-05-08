@@ -12,6 +12,7 @@ demo: https://version-1.github.io/redux-github-viewer/
 ## 課題で身に着けること
 
 - Reduxでの状態管理
+- Atomicデザインでのコンポーネント設計
 - React Routerでのページ設定とページ遷移
 - Eslint + Prettier
 - モーダルの実装
@@ -47,7 +48,23 @@ yarn create react-app redux-github-viewer
 
 で検索してインストールしてみてください。詰まった場合は適宜質問ください。
 
-#### 2. Reduxの概念を学ぶ
+#### 2. 実装に必要な概念を学ぶ
+
+##### Atomic Designによるコンポーネント設計
+
+[Atomic Design を分かったつもりになる](https://design.dena.com/design/atomic-design-%E3%82%92%E5%88%86%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%A4%E3%82%82%E3%82%8A%E3%81%AB%E3%81%AA%E3%82%8B/)
+
+下記ようなディレクトリ設計にすると、うまくいきやすいです。
+
+```
+src/components/ -+
+                 | - atoms/
+                 | - molecules/
+                 | - organisms/
+                 | - templates/
+```
+
+##### Redux
 
 主にメインコンセプト部分中心に
 
@@ -55,11 +72,11 @@ yarn create react-app redux-github-viewer
 - [Redux入門【ダイジェスト版】10分で理解するReduxの基礎](https://qiita.com/kitagawamac/items/49a1f03445b19cf407b7)]
 - [Redux 入門 〜Reduxの基礎を理解する〜](https://qiita.com/soarflat/items/bd319695d156654bbe86)
 
-##### サンプル
+**サンプル**
 
 [Redux Todo List](https://jsfiddle.net/version1/u4y0j1qv/latest)
 
-#### 3. SPA(Single Page Application)の概念を学ぶ
+##### SPA(Single Page Application)
 
 - [SPA(Single Page Application)ってなに？](https://digitalidentity.co.jp/blog/creative/about-single-page-application.html)
 - [シングルページアプリケーション（SPA）の導入メリット＆デメリット](https://www.oro.com/ja/technology/001/)
