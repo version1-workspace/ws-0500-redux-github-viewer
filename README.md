@@ -57,11 +57,12 @@ yarn create react-app redux-github-viewer
 下記ようなディレクトリ設計にすると、うまくいきやすいです。
 
 ```
-src/components/ -+
-                 | - atoms/
-                 | - molecules/
-                 | - organisms/
-                 | - templates/
+src - components -+
+                  | - atoms/
+                  | - molecules/
+                  | - organisms/
+                  | - templates/
+    - pages/
 ```
 
 ##### Redux
