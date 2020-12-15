@@ -8,7 +8,6 @@ React+ReduxでGithub Viewerを実装しましょう。</br>
 
 demo: https://version-1.github.io/ws-0500-redux-github-viewer/
 
-
 ## 課題で身に着けること
 
 - Reduxでの状態管理
@@ -52,7 +51,7 @@ yarn create react-app redux-github-viewer
 
 ##### Atomic Designによるコンポーネント設計
 
-[Atomic Design を分かったつもりになる](https://design.dena.com/design/atomic-design-%E3%82%92%E5%88%86%E3%81%8B%E3%81%A3%E3%81%9F%E3%81%A4%E3%82%82%E3%82%8A%E3%81%AB%E3%81%AA%E3%82%8B/)
+[Atomic Designとは何か](https://www.codegrid.net/articles/2017-atomic-design-1/)
 
 下記ようなディレクトリ設計にすると、うまくいきやすいです。
 
