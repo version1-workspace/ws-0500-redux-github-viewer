@@ -6,7 +6,7 @@ React+ReduxでGithub Viewerを実装しましょう。</br>
 実際にGithub REST APIを叩くのは次課題なので、
 この課題は**React Router**と**Redux**の利用にフォーカスしましょう。
 
-demo: https://version-1.github.io/ws-0500-redux-github-viewer/
+demo: https://version1-workspace.github.io/ws-0500-redux-github-viewer/
 
 ## 課題で身に着けること
 
