@@ -82,7 +82,6 @@ src - components -+
 - [シングルページアプリケーション（SPA）の導入メリット＆デメリット](https://www.oro.com/ja/technology/001/)
 - [SPA(Single Page Application)の基本](https://qiita.com/takanorip/items/82f0c70ebc81e9246c7a)
 - [React Router](https://reacttraining.com/react-router/web/guides/quick-start)
-- [ささっと学ぶReact Router v4](https://the2g.com/2789)
 
 ### 4.デモをみながらGithubViewerを実装
 
