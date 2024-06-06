@@ -71,10 +71,6 @@ src - components -+
 - [Redux入門【ダイジェスト版】10分で理解するReduxの基礎](https://qiita.com/kitagawamac/items/49a1f03445b19cf407b7)]
 - [Redux 入門 〜Reduxの基礎を理解する〜](https://qiita.com/soarflat/items/bd319695d156654bbe86)
 
-**サンプル**
-
-[Redux Todo List](https://jsfiddle.net/version1/u4y0j1qv/latest)
-
 ##### SPA(Single Page Application)
 
 - [SPA(Single Page Application)ってなに？](https://digitalidentity.co.jp/blog/creative/about-single-page-application.html)
